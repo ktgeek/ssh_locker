@@ -11,8 +11,6 @@
 
 
 @interface myListener : NSObject {
-    const char *keychainName;
 }
 
-- (void) setKeychainName: (const char*) inKeychainName;
 @end

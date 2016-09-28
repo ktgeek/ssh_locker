@@ -1,8 +1,11 @@
-From Dave's original release:
+This small deamon listens for your OS X screen to be locked and then
+stops your ssh-agent if its running.
 
-A little tool I wrote to automatically lock ssh-agent when the keychain locks.  See more at [this blog post][1].
+Previous versions of this used to also lock a named keychain. Because
+Apple has removed ssh/Keychain integratin in Sierra, the keychain
+integration has been removed from ssh_locker.  The downside of this
+change is there's no nice OS level gui to enter your ssh passphrase
+and add the key to the ssh-agent.
 
-[1]: http://www.dribin.org/dave/blog/archives/2007/11/28/securing_ssh_agent/
-
-Keith's note:
-I have modified (with my friend Lena's help) Dave's code to pay attention to screensaver start and lock the keychain.
+To get close to similar functionality, add "AddKeysToAgent yes" to
+your ssh config.
