@@ -10,7 +10,6 @@
 		55E85D48175BE1070048DE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E85D47175BE1070048DE9B /* Foundation.framework */; };
 		55E85D4F175BE1070048DE9B /* ssh_locker.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55E85D4E175BE1070048DE9B /* ssh_locker.1 */; };
 		55E85D56175BE5DA0048DE9B /* ssh_locker.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E85D55175BE5DA0048DE9B /* ssh_locker.m */; };
-		55E85D58175BE5F50048DE9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E85D57175BE5F50048DE9B /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,7 +31,7 @@
 		55E85D4D175BE1070048DE9B /* ssh_locker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ssh_locker-Prefix.pch"; sourceTree = "<group>"; };
 		55E85D4E175BE1070048DE9B /* ssh_locker.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ssh_locker.1; sourceTree = "<group>"; };
 		55E85D55175BE5DA0048DE9B /* ssh_locker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ssh_locker.m; sourceTree = "<group>"; };
-		55E85D57175BE5F50048DE9B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DEC0064A2003E4DA002E682C /* org.dribin.dave.ssh_locker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = org.dribin.dave.ssh_locker.plist; path = ssh_locker/org.dribin.dave.ssh_locker.plist; sourceTree = SOURCE_ROOT; };
 		DEFE07621D9C42BE00D6F648 /* myListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myListener.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,7 +40,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55E85D58175BE5F50048DE9B /* Security.framework in Frameworks */,
 				55E85D48175BE1070048DE9B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,7 +50,6 @@
 		55E85D3B175BE1060048DE9B = {
 			isa = PBXGroup;
 			children = (
-				55E85D57175BE5F50048DE9B /* Security.framework */,
 				55E85D49175BE1070048DE9B /* ssh_locker */,
 				55E85D46175BE1070048DE9B /* Frameworks */,
 				55E85D45175BE1070048DE9B /* Products */,
@@ -89,6 +86,7 @@
 		55E85D4C175BE1070048DE9B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DEC0064A2003E4DA002E682C /* org.dribin.dave.ssh_locker.plist */,
 				55E85D4D175BE1070048DE9B /* ssh_locker-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -120,7 +118,7 @@
 		55E85D3C175BE1060048DE9B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Dave Dribin";
 			};
 			buildConfigurationList = 55E85D3F175BE1060048DE9B /* Build configuration list for PBXProject "ssh_locker" */;
@@ -158,12 +156,18 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -186,7 +190,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -198,18 +202,25 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -219,7 +230,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
