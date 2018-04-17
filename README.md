@@ -1,3 +1,12 @@
+# NOTICE
+
+This fork of ssh_locker has been deprecated. If you're looking to
+remove your ssh keys on screen lock or sleep, check out
+[supreSSHion](https://github.com/ktgeek/supreSSHion) my new project
+that extends this functionality as a menu bar app.
+
+# ssh_locker
+
 This small deamon listens for your OS X screen to be locked and then
 stops your ssh-agent if its running.
 
